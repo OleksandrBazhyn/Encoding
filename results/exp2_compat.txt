@@ -1,0 +1,44 @@
+##### Сумісні зміни (v1 <-> v2)
+=== RPC: клієнт v1 -> сервер v1
+  клієнт  CreateOrder відповідь: id=cb523c82-5b84-4c6c-8433-d30b706bc455 status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  клієнт  GetOrder відповідь:    id=cb523c82-5b84-4c6c-8433-d30b706bc455 status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  сервер  CreateOrder отримано: id= items=14 item0.qty=5 comment='Please do not ring the bell'
+=== RPC: клієнт v1 -> сервер v2
+  клієнт  CreateOrder відповідь: id=1e492338-6438-497c-92e0-961c52f8e86a status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  клієнт  GetOrder відповідь:    id=1e492338-6438-497c-92e0-961c52f8e86a status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  сервер  CreateOrder отримано: id= items=14 item0.qty=5 promo_code='' unknown=#7
+=== RPC: клієнт v2 -> сервер v1
+  клієнт  CreateOrder відповідь: id=c7b04f69-df35-4aea-931d-25e4112972f1 status=1 items=14 item0.qty=5 promo_code='AUTUMN10'
+  клієнт  GetOrder відповідь:    id=c7b04f69-df35-4aea-931d-25e4112972f1 status=1 items=14 item0.qty=5 promo_code='AUTUMN10'
+  сервер  CreateOrder отримано: id= items=14 item0.qty=5 comment=<не задано> unknown=#8
+=== Черга: сервіс замовлень v2 -> склад v1
+  склад отримав    отримано: id=982dd4ca-5e77-4937-b3d3-3201ec2a332b items=14 item0.qty=5 comment=<не задано> unknown=#8
+  сервіс замовлень результат 982dd4ca-5e77-4937-b3d3-3201ec2a332b CONFIRMED applied; order від складу: id=982dd4ca-5e77-4937-b3d3-3201ec2a332b items=14 item0.qty=5 promo_code='AUTUMN10'
+=== Черга: 5 повідомлень v1 накопичились, склад перезапущено з v2
+  у черзі: orders.created	5
+  склад отримав    отримано: id=f6023649-a304-4379-a22d-005ff2304300 items=14 item0.qty=5 promo_code='' unknown=#7
+  склад отримав    отримано: id=0e1da754-55c3-47c0-b67a-25600d862acc items=8 item0.qty=1 promo_code=''
+  склад отримав    отримано: id=d32507b7-a61e-4433-a4a6-d0c662cc38f6 items=4 item0.qty=3 promo_code=''
+  склад отримав    отримано: id=fc07128c-7de5-40c9-9e27-348212c9bff1 items=4 item0.qty=7 promo_code='' unknown=#7
+  склад отримав    отримано: id=49ca6f67-47a8-48e0-87be-80e47c4cec12 items=16 item0.qty=2 promo_code='' unknown=#7
+  сервіс замовлень результат f6023649-a304-4379-a22d-005ff2304300 CONFIRMED applied; order від складу: id=f6023649-a304-4379-a22d-005ff2304300 items=14 item0.qty=5 comment='Please do not ring the bell'
+  сервіс замовлень результат 0e1da754-55c3-47c0-b67a-25600d862acc CONFIRMED applied; order від складу: id=0e1da754-55c3-47c0-b67a-25600d862acc items=8 item0.qty=1 comment=<не задано>
+  сервіс замовлень результат d32507b7-a61e-4433-a4a6-d0c662cc38f6 CONFIRMED applied; order від складу: id=d32507b7-a61e-4433-a4a6-d0c662cc38f6 items=4 item0.qty=3 comment=<не задано>
+  сервіс замовлень результат fc07128c-7de5-40c9-9e27-348212c9bff1 CONFIRMED applied; order від складу: id=fc07128c-7de5-40c9-9e27-348212c9bff1 items=4 item0.qty=7 comment='Please do not ring the bell'
+  сервіс замовлень результат 49ca6f67-47a8-48e0-87be-80e47c4cec12 CONFIRMED applied; order від складу: id=49ca6f67-47a8-48e0-87be-80e47c4cec12 items=16 item0.qty=2 comment='Подзвоніть за годину до доставки'
+
+##### Несумісна зміна (v1 <-> v2break, quantity uint32 -> sint32)
+=== RPC: клієнт v1 -> сервер v2break
+  клієнт  CreateOrder відповідь: id=50d2d28e-a6a6-4d33-a2f8-9a5a5f12a298 status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  клієнт  GetOrder відповідь:    id=50d2d28e-a6a6-4d33-a2f8-9a5a5f12a298 status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  сервер  CreateOrder отримано: id= items=14 item0.qty=-3 comment='Please do not ring the bell'
+=== RPC: клієнт v2break -> сервер v1
+  клієнт  CreateOrder відповідь: id=349e35e7-dd09-4cb0-b767-0cec1ad13e12 status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  клієнт  GetOrder відповідь:    id=349e35e7-dd09-4cb0-b767-0cec1ad13e12 status=1 items=14 item0.qty=5 comment='Please do not ring the bell'
+  сервер  CreateOrder отримано: id= items=14 item0.qty=10 comment='Please do not ring the bell'
+=== Черга: сервіс замовлень v1 -> склад v2break
+  склад отримав    отримано: id=f34d0362-48ec-40ef-b3a8-810aa17ec056 items=14 item0.qty=-3 comment='Please do not ring the bell'
+  сервіс замовлень результат f34d0362-48ec-40ef-b3a8-810aa17ec056 CONFIRMED applied; order від складу: id=f34d0362-48ec-40ef-b3a8-810aa17ec056 items=14 item0.qty=5 comment='Please do not ring the bell'
+=== Черга: сервіс замовлень v2break -> склад v1
+  склад отримав    отримано: id=c20f6a05-2965-4d2c-abe3-46c6a1820a45 items=14 item0.qty=10 comment='Please do not ring the bell'
+  сервіс замовлень результат c20f6a05-2965-4d2c-abe3-46c6a1820a45 CONFIRMED applied; order від складу: id=c20f6a05-2965-4d2c-abe3-46c6a1820a45 items=14 item0.qty=5 comment='Please do not ring the bell'

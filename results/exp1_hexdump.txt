@@ -1,0 +1,9 @@
+protobuf 104 B, json 297 B
+0000  0a 03 6f 2d 31 12 06 63 75 73 74 2d 37 18 80 94 
+0010  9e 9e a0 33 20 01 2a 29 0a 02 55 41 12 08 d0 9a 
+0020  d0 b8 d1 97 d0 b2 1a 12 d0 a5 d1 80 d0 b5 d1 89 
+0030  d0 b0 d1 82 d0 b8 d0 ba 20 31 22 05 30 31 30 30 
+0040  31 32 0e 0a 06 53 4b 55 2d 34 32 10 03 18 ec f6 
+0050  07 3a 15 d0 91 d0 b5 d0 b7 20 d0 b4 d0 b7 d0 b2 
+0060  d1 96 d0 bd d0 ba d0 b0                         
+{"id":"o-1","customer_id":"cust-7","created_at_ms":1761000000000,"status":"PENDING","shipping_address":{"country":"UA","city":"Київ","street":"Хрещатик 1","postal_code":"01001"},"items":[{"product_id":"SKU-42","quantity":3,"unit_price_cents":129900}],"comment":"Без дзвінка"}

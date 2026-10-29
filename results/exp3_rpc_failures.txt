@@ -1,0 +1,70 @@
+=== сервер не запущений
+{
+ "logical": 20,
+ "ok": 0,
+ "failed": 20,
+ "attempts": 60,
+ "errors": {
+  "UNAVAILABLE": 60
+ },
+ "example": {
+  "UNAVAILABLE": "No connection established. Last error: Error: connect ECONNREFUSED 127.0.0.1:50081. Resolution note: "
+ }
+}
+на сервері створено: 0 (процесу немає)
+=== slow_1500
+{
+ "logical": 20,
+ "ok": 20,
+ "failed": 0,
+ "attempts": 40,
+ "errors": {
+  "DEADLINE_EXCEEDED": 20
+ },
+ "example": {
+  "DEADLINE_EXCEEDED": "Deadline exceeded after 1.000s"
+ }
+}
+на сервері створено: 40, різних request_id: 20, створено після того як клієнт відмовився: 20
+=== slow_1500_idempotent
+{
+ "logical": 20,
+ "ok": 20,
+ "failed": 0,
+ "attempts": 40,
+ "errors": {
+  "DEADLINE_EXCEEDED": 20
+ },
+ "example": {
+  "DEADLINE_EXCEEDED": "Deadline exceeded after 1.001s"
+ }
+}
+на сервері створено: 20, різних request_id: 20, створено після того як клієнт відмовився: 20
+=== slow_5000
+{
+ "logical": 20,
+ "ok": 0,
+ "failed": 20,
+ "attempts": 60,
+ "errors": {
+  "DEADLINE_EXCEEDED": 60
+ },
+ "example": {
+  "DEADLINE_EXCEEDED": "Deadline exceeded after 1.002s"
+ }
+}
+на сервері створено: 60, різних request_id: 20, створено після того як клієнт відмовився: 60
+=== slow_5000_idempotent
+{
+ "logical": 20,
+ "ok": 20,
+ "failed": 0,
+ "attempts": 60,
+ "errors": {
+  "DEADLINE_EXCEEDED": 40
+ },
+ "example": {
+  "DEADLINE_EXCEEDED": "Deadline exceeded after 1.000s"
+ }
+}
+на сервері створено: 20, різних request_id: 20, створено після того як клієнт відмовився: 20

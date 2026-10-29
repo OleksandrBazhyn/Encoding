@@ -1,0 +1,6 @@
+v2 читає 411 B: id=96da1dac-72ff-4d2a-b86e-cbe06b65a6a4 items=14 item0.qty=5 promo_code='AUTUMN10'
+python v1: прочитано 411 B, id=96da1dac-72ff-4d2a-b86e-cbe06b65a6a4 items=14 item0.qty=5 comment=<не задано> unknown=#8, записано 411 B
+v2 читає 411 B: id=96da1dac-72ff-4d2a-b86e-cbe06b65a6a4 items=14 item0.qty=5 promo_code='AUTUMN10'
+node v1: прочитано 411 B, hasComment=false, записано 401 B
+v2 читає 401 B: id=96da1dac-72ff-4d2a-b86e-cbe06b65a6a4 items=14 item0.qty=5 promo_code=''
+останні 10 байт v2.bin: 42 08 41 55 54 55 4d 4e 31 30 

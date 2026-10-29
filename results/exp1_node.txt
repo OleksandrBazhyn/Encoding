@@ -1,0 +1,6 @@
+json_encode  runs(ms)=56.9,50.4,48.6,51.5,50.6 median=50.59
+json_decode  runs(ms)=52.5,53.2,56.0,57.0,54.8 median=54.83
+pb_encode    runs(ms)=126.8,59.8,53.2,52.2,52.5 median=53.17
+pb_decode    runs(ms)=61.6,67.2,70.6,114.3,62.5 median=67.2
+size json=9904134 protobuf=3543869 ratio=2.79
+{"json_bytes":9904134,"pb_bytes":3543869,"json_encode":50.59,"json_decode":54.83,"pb_encode":53.17,"pb_decode":67.2}

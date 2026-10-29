@@ -1,0 +1,18 @@
+2026-10-29 22:12:17,726 orders[v2break] Pika version 1.4.4 connecting to ('::1', 5672, 0, 0)
+2026-10-29 22:12:17,726 orders[v2break] Pika version 1.4.4 connecting to ('::1', 5672, 0, 0)
+2026-10-29 22:12:17,726 orders[v2break] Socket connected: <socket.socket fd=16, family=10, type=1, proto=6, laddr=('::1', 59908, 0, 0), raddr=('::1', 5672, 0, 0)>
+2026-10-29 22:12:17,726 orders[v2break] Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3944274d0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3944274d0> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2026-10-29 22:12:17,726 orders[v2break] Socket connected: <socket.socket fd=17, family=10, type=1, proto=6, laddr=('::1', 59912, 0, 0), raddr=('::1', 5672, 0, 0)>
+2026-10-29 22:12:17,727 orders[v2break] Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3943e3b10>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3943e3b10> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2026-10-29 22:12:17,727 orders[v2break] слухаю 127.0.0.1:50072, схема v2break, delay=0ms, idempotent=False
+2026-10-29 22:12:17,729 orders[v2break] AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3944274d0> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 22:12:17,729 orders[v2break] AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3944274d0> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 22:12:17,729 orders[v2break] Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3944274d0> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 22:12:17,729 orders[v2break] Created channel=1
+2026-10-29 22:12:17,729 orders[v2break] AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3943e3b10> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 22:12:17,729 orders[v2break] AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3943e3b10> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 22:12:17,729 orders[v2break] Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fd3943e3b10> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 22:12:17,729 orders[v2break] Created channel=1
+2026-10-29 22:12:19,390 orders[v2break] CreateOrder отримано: id= items=14 item0.qty=5 comment='Please do not ring the bell'
+2026-10-29 22:12:19,393 orders[v2break] результат c20f6a05-2965-4d2c-abe3-46c6a1820a45 CONFIRMED applied; order від складу: id=c20f6a05-2965-4d2c-abe3-46c6a1820a45 items=14 item0.qty=5 comment='Please do not ring the bell'
+2026-10-29 22:12:19,398 orders[v2break] GetOrder віддає: id=c20f6a05-2965-4d2c-abe3-46c6a1820a45 items=14 item0.qty=5 comment='Please do not ring the bell'

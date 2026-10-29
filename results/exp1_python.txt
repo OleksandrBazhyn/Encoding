@@ -1,0 +1,7 @@
+json_encode  runs(ms)=[97.4, 95.8, 94.6, 95.1, 99.5] median=95.8
+json_decode  runs(ms)=[171.8, 131.5, 166.7, 129.8, 168.7] median=166.7
+pb_encode    runs(ms)=[8.7, 8.5, 8.3, 8.4, 8.6] median=8.5
+pb_decode    runs(ms)=[18.7, 19.6, 17.9, 19.1, 20.0] median=19.1
+size json=9904134 protobuf=3543869 ratio=2.79
+avg per order: json=990 B, protobuf=354 B
+{"json_bytes": 9904134, "pb_bytes": 3543869, "json_encode": 95.8, "json_decode": 166.75, "pb_encode": 8.48, "pb_decode": 19.06}

@@ -1,0 +1,3 @@
+2026-10-29 22:12:11,515 orders[v1] слухаю 127.0.0.1:50071, схема v1, delay=0ms, idempotent=False
+2026-10-29 22:12:12,880 orders[v1] CreateOrder отримано: id= items=14 item0.qty=10 comment='Please do not ring the bell'
+2026-10-29 22:12:12,887 orders[v1] GetOrder віддає: id=349e35e7-dd09-4cb0-b767-0cec1ad13e12 items=14 item0.qty=10 comment='Please do not ring the bell'

@@ -1,0 +1,75 @@
+// Несумісна зміна відносно v1: quantity uint32 -> sint32 (той самий номер поля)
+syntax = "proto3";
+
+package shop;
+
+enum OrderStatus {
+  STATUS_UNSPECIFIED = 0;
+  PENDING = 1;
+  CONFIRMED = 2;
+  REJECTED = 3;
+}
+
+message Address {
+  string country = 1;
+  string city = 2;
+  string street = 3;
+  string postal_code = 4;
+}
+
+message OrderItem {
+  string product_id = 1;
+  sint32 quantity = 2;
+  int64 unit_price_cents = 3;
+}
+
+message Order {
+  string id = 1;
+  string customer_id = 2;
+  int64 created_at_ms = 3;
+  OrderStatus status = 4;
+  Address shipping_address = 5;
+  repeated OrderItem items = 6;
+  optional string comment = 7;
+}
+
+message CreateOrderRequest {
+  // ключ ідемпотентності, однаковий для повторів одного запиту
+  string request_id = 1;
+  Order order = 2;
+}
+
+message GetOrderRequest {
+  string id = 1;
+}
+
+message ListOrdersRequest {
+  string customer_id = 1;
+}
+
+message ListOrdersResponse {
+  repeated Order orders = 1;
+}
+
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (Order);
+  rpc GetOrder(GetOrderRequest) returns (Order);
+  rpc ListCustomerOrders(ListOrdersRequest) returns (ListOrdersResponse);
+}
+
+// Повідомлення черги (частина B)
+
+// orders.created: сервіс замовлень -> сервіс складу
+message OrderCreated {
+  Order order = 1;
+}
+
+// orders.results: сервіс складу -> сервіс замовлень
+message ReservationResult {
+  string order_id = 1;
+  OrderStatus status = 2;
+  string reason = 3;
+  int64 processed_at_ms = 4;
+  // замовлення в тому вигляді, як його декодував і знову закодував склад
+  Order order = 5;
+}

@@ -1,0 +1,15 @@
+2026-10-29 23:08:26,393 orders[v1] Pika version 1.4.4 connecting to ('::1', 5672, 0, 0)
+2026-10-29 23:08:26,393 orders[v1] Pika version 1.4.4 connecting to ('::1', 5672, 0, 0)
+2026-10-29 23:08:26,393 orders[v1] Socket connected: <socket.socket fd=16, family=10, type=1, proto=6, laddr=('::1', 60686, 0, 0), raddr=('::1', 5672, 0, 0)>
+2026-10-29 23:08:26,393 orders[v1] Socket connected: <socket.socket fd=15, family=10, type=1, proto=6, laddr=('::1', 60690, 0, 0), raddr=('::1', 5672, 0, 0)>
+2026-10-29 23:08:26,394 orders[v1] Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a447b620>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a447b620> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2026-10-29 23:08:26,394 orders[v1] Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a443f890>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a443f890> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>).
+2026-10-29 23:08:26,395 orders[v1] слухаю 127.0.0.1:50097, схема v1, delay=1500ms, idempotent=True
+2026-10-29 23:08:26,396 orders[v1] AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a447b620> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 23:08:26,396 orders[v1] AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a447b620> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 23:08:26,397 orders[v1] Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a447b620> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 23:08:26,397 orders[v1] Created channel=1
+2026-10-29 23:08:26,396 orders[v1] AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a443f890> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 23:08:26,397 orders[v1] AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a443f890> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 23:08:26,397 orders[v1] Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f83a443f890> params=<URLParameters host=localhost port=5672 virtual_host=/ ssl=False>>
+2026-10-29 23:08:26,397 orders[v1] Created channel=1
