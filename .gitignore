@@ -1,0 +1,20 @@
+# залежності та середовища
+.venv/
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# згенеровано з schema/ через ./gen.sh
+gen/
+client/gen/
+
+# відтворюване / сирі дані прогонів
+data/
+logs/
+
+# звіт
+/report/
+/REPORT.md
+.~lock.*#

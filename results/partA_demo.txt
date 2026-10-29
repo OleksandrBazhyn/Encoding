@@ -1,0 +1,8 @@
+$ node client/client.js --schema v1 create-one --index 0
+CreateOrder відповідь: id=2131471d-e055-4fad-a684-c05a91c0d807 status=1 items=3 item0.qty=7 comment='Залиште біля дверей'
+GetOrder відповідь:    id=2131471d-e055-4fad-a684-c05a91c0d807 status=2 items=3 item0.qty=7 comment='Залиште біля дверей'
+$ node client/client.js --schema v1 list cust-00114
+id=2131471d-e055-4fad-a684-c05a91c0d807 status=2 items=3 item0.qty=7 comment='Залиште біля дверей'
+id=96859089-2d66-4d85-b2a5-92195a98b07b status=2 items=3 item0.qty=7 comment='Залиште біля дверей'
+$ node client/client.js --schema v1 get 00000000-0000-0000-0000-000000000000
+помилка: code=5 (NOT_FOUND) замовлення 00000000-0000-0000-0000-000000000000 не знайдено
